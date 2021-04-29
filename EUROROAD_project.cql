@@ -20,7 +20,7 @@ CALL db.schema.visualization
 MATCH (p)
 RETURN p
 
-//Try to find the node name Modena and their adjacent nodes
+//Try to find the node named Modena and its adjacent nodes
 MATCH (p{CityName:'Modena'})--(q)
 RETURN p,q
 
@@ -30,13 +30,26 @@ WITH p, count(r) as DegreeScore
 SET p.degree = DegreeScore
 RETURN p.degree
 
+//Update degree as a new proterties of Node
+MATCH (p)-[r]-()
+WITH p, count(r) as DegreeScore
+SET p.degree = DegreeScore
+RETURN p.degree
+
+
 // Try to find node where have degree more than 6
 MATCH (p)-[r]-()
 WITH p, count(r) as DegreeScore
 WHERE DegreeScore>6
 RETURN p, DegreeScore
 
-// Try to set the degree to the node and show node orfer by degree
+//Find node and degree where have deree more than 7
+MATCH (p)
+WHERE p.degree>7
+RETURN p.CityName, p.degree As degree
+ORDER BY degree DESC
+
+// Try to show nodes where are the top 10 of highest degree
 MATCH (p)-[r]-()
 WITH p, count(r) as DegreeScore
 SET p.degree = DegreeScore
@@ -84,6 +97,12 @@ RETURN allNodes, score
 ORDER BY score DESC
 LIMIT 10;
 
+//Find Eigenvector
+CALL gds.alpha.eigenvector.stream('euroroad2') YIELD nodeId, score
+WITH gds.util.asNode(nodeId).CityName AS node, score
+RETURN node, score
+ORDER BY score DESC
+LIMIT 10;
 
 //COMMUNITY DETECTION
 //Louvain method
@@ -102,7 +121,7 @@ WITH community, communities, collect(node) AS nodes
 RETURN community, communities, size(nodes) AS size, nodes
 ORDER BY size DESC
 
-//Weakly connected
+//Weakly connected component
 CALL gds.wcc.stream('euroroad2') YIELD nodeId, componentId AS community
 WITH gds.util.asNode(nodeId).CityName AS node, community
 WITH collect(node) AS allNodes, community
@@ -124,6 +143,12 @@ WITH collect(node) AS allNodes, triangles,count(node) AS Node
 RETURN allNodes, triangles, Node
 ORDER BY triangles DESC
 
+//Triangle count with graph visualization
+CALL gds.alpha.triangles('euroroad2')
+YIELD nodeA, nodeB, nodeC
+RETURN gds.util.asNode(nodeA) AS nodeA, gds.util.asNode(nodeB) AS nodeB, gds.util.asNode(nodeC) AS nodeC
+
+
 //Local Clustering coefficient
 CALL gds.localClusteringCoefficient.stream('euroroad2')
 YIELD nodeId, localClusteringCoefficient AS coefficient
@@ -131,5 +156,10 @@ WITH gds.util.asNode(nodeId).CityName AS node, coefficient
 RETURN node, coefficient
 ORDER BY coefficient DESC
 
-
+CALL gds.localClusteringCoefficient.stream('euroroad2')
+YIELD nodeId, localClusteringCoefficient AS coefficient
+WITH gds.util.asNode(nodeId).CityName AS node, coefficient
+WITH collect(node) AS nodes, coefficient
+RETURN nodes, coefficient
+ORDER BY coefficient DESC
 
