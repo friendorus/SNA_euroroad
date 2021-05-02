@@ -68,7 +68,7 @@ This is the FINAL PROJECT in part of DS535 Social Network Analysis, in Master de
 
 ### Prerequisites
 
-At the begining, you should download data set at [https://github.com/friendorus/SNA_euroroad](Shttps://github.com/friendorus/SNA_euroroad) which consists of 2 csv files those are [https://github.com/friendorus/SNA_euroroad/blob/f1baca4a5ade8be92f953ddd9ace954339957c44/Data/nodes.csv](https://github.com/friendorus/SNA_euroroad/blob/f1baca4a5ade8be92f953ddd9ace954339957c44/Data/nodes.csv) and [https://github.com/friendorus/SNA_euroroad/blob/f1baca4a5ade8be92f953ddd9ace954339957c44/Data/edges.csv](https://github.com/friendorus/SNA_euroroad/blob/f1baca4a5ade8be92f953ddd9ace954339957c44/Data/edges.csv)
+At the begining, you should download data set at [https://github.com/friendorus/SNA_euroroad](https://github.com/friendorus/SNA_euroroad) which consists of 2 csv files those are [https://github.com/friendorus/SNA_euroroad/blob/f1baca4a5ade8be92f953ddd9ace954339957c44/Data/nodes.csv](https://github.com/friendorus/SNA_euroroad/blob/f1baca4a5ade8be92f953ddd9ace954339957c44/Data/nodes.csv) and [https://github.com/friendorus/SNA_euroroad/blob/f1baca4a5ade8be92f953ddd9ace954339957c44/Data/edges.csv](https://github.com/friendorus/SNA_euroroad/blob/f1baca4a5ade8be92f953ddd9ace954339957c44/Data/edges.csv)
 
 ### Installation
 
