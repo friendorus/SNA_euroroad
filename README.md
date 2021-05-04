@@ -42,6 +42,7 @@
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
+        <li><a href="#import">Import</a></li>
       </ul>
     </li>
     <!-- <li><a href="#roadmap">Roadmap</a></li>
@@ -77,14 +78,39 @@ At the begining, you should download data set at [my github](https://github.com/
 1. After Loading csv. files and create your project and database in Neo4j, you need to copy these files to import folder. You can find the import folder by hovering over the three dots to the right started DBMS and selecting __Open folder__, and then __Import__
 1. After add csv. file to import folder, you should install plugin for using algotirth. Plugins that you should install are __APOC__ and __Graph Data Science Library__
 
-
+### Import
+- Firstly, Import Nodes to database from [nodes.csv](https://github.com/friendorus/SNA_euroroad/blob/f1baca4a5ade8be92f953ddd9ace954339957c44/Data/nodes.csv) by using this query. I labeled node as City and named the properties of node as __CityID__, __CityName__ and __Position__
+```
+// LOAD Node and Peoperites to Database
+LOAD CSV WITH HEADERS FROM 'file:///nodes.csv' AS row
+WITH toInteger(row.index) AS CityID, row.meta AS CityName,row._pos AS Position
+MERGE (c:City {CityID:CityID})
+SET c.CityName = CityName, c.Position = Position
+RETURN count(c);
+```
+- Then, I imported Edges to the database from [edges.csv](https://github.com/friendorus/SNA_euroroad/blob/f1baca4a5ade8be92f953ddd9ace954339957c44/Data/edges.csv) by using this query. I have to __MATCH__ the nodes that I already added and then put the node to query. I labeled relationship/edges as __CONNECTED__.
+```
+// Match Node from database and LOAD Relationship to Database
+LOAD CSV WITH HEADERS FROM 'file:///edges.csv' AS row
+WITH toInteger(row.source) AS City1, toInteger(row.target) AS City2
+MATCH (c1:City {CityID: City1})
+MATCH (c2:City {CityID: City2})
+MERGE (c1)-[rel:CONNECTED]->(c2)
+RETURN c1,c2
+```
+- Now you can visualized type of your nodes and edges by using this query.
+```
+// Visulaization type of Node and Realationship
+CALL db.schema.visualization
+```
+- I will not show other my query and result on this page. You can find code [here](https://github.com/friendorus/SNA_euroroad/blob/6a27f7fa71ec94a157f43533d2b2e4343f6ce354/Cypher/EUROROAD_project.cql)
 
 <!-- Medium -->
 ## Medium
 
 I wrote how to import csv file to Neo4j, Neo4j code and all of result in [My Medium.](https://peachapong-poolpol.medium.com/social-network-analysis-of-international-e-road-network-fcf685d3e2dd)
 
-You can also see the code and result of my project from the [Powepoint Files](https://github.com/friendorus/SNA_euroroad/blob/6a27f7fa71ec94a157f43533d2b2e4343f6ce354/docs/Result%20of%20SNA%20of%20Euroroad%20Using%20Neo4j.pptx)
+You can also see the code and results of my project from this [Slides](https://github.com/friendorus/SNA_euroroad/blob/6a27f7fa71ec94a157f43533d2b2e4343f6ce354/docs/Result%20of%20SNA%20of%20Euroroad%20Using%20Neo4j.pptx)
 
 
 <!-- REPORT -->
