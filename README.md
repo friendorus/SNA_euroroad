@@ -68,20 +68,20 @@ This is the FINAL PROJECT in part of DS535 Social Network Analysis, in Master de
 
 ### Prerequisites
 
-At the begining, you should download data set at [https://github.com/friendorus/SNA_euroroad](https://github.com/friendorus/SNA_euroroad) which consists of 2 csv files those are [https://github.com/friendorus/SNA_euroroad/blob/f1baca4a5ade8be92f953ddd9ace954339957c44/Data/nodes.csv](https://github.com/friendorus/SNA_euroroad/blob/f1baca4a5ade8be92f953ddd9ace954339957c44/Data/nodes.csv) and [https://github.com/friendorus/SNA_euroroad/blob/f1baca4a5ade8be92f953ddd9ace954339957c44/Data/edges.csv](https://github.com/friendorus/SNA_euroroad/blob/f1baca4a5ade8be92f953ddd9ace954339957c44/Data/edges.csv)
+At the begining, you should download data set at [my github](https://github.com/friendorus/SNA_euroroad) which consists of 2 csv files those are [/Data/nodes.csv](https://github.com/friendorus/SNA_euroroad/blob/f1baca4a5ade8be92f953ddd9ace954339957c44/Data/nodes.csv) and [/Data/edges.csv](https://github.com/friendorus/SNA_euroroad/blob/f1baca4a5ade8be92f953ddd9ace954339957c44/Data/edges.csv)
 
 ### Installation
 
-Neo4j Desktop can download at [https://neo4j.com/download/](https://neo4j.com/download/)
+Neo4j Desktop can download [here](https://neo4j.com/download/)
 
 
 
 <!-- Medium -->
 ## Medium
 
-I wrote how to import csv file to Neo4j, Neo4j code and all of result in Medium [https://peachapong-poolpol.medium.com/social-network-analysis-of-international-e-road-network-fcf685d3e2dd](https://peachapong-poolpol.medium.com/social-network-analysis-of-international-e-road-network-fcf685d3e2dd)
+I wrote how to import csv file to Neo4j, Neo4j code and all of result in [My Medium.](https://peachapong-poolpol.medium.com/social-network-analysis-of-international-e-road-network-fcf685d3e2dd)
 
-You can also see the code and result of my project from the PowerPoint files [https://github.com/friendorus/SNA_euroroad/blob/f1baca4a5ade8be92f953ddd9ace954339957c44/Result%20of%20SNA%20of%20Euroroad%20Using%20Neo4j.pptx](https://github.com/friendorus/SNA_euroroad/blob/f1baca4a5ade8be92f953ddd9ace954339957c44/Result%20of%20SNA%20of%20Euroroad%20Using%20Neo4j.pptx)
+You can also see the code and result of my project from the [Powepoint Files](https://github.com/friendorus/SNA_euroroad/blob/f1baca4a5ade8be92f953ddd9ace954339957c44/Result%20of%20SNA%20of%20Euroroad%20Using%20Neo4j.pptx)
 
 
 
