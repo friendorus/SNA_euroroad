@@ -6,19 +6,19 @@
 <br />
 <p align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/graph.png" alt="Logo" width="80" height="80">
+    <img src="images/graph.png" alt="Logo" width="300" height="300">
   </a>
 
   <h3 align="center">Social Network Analysis of International E-road Network Using Neo4j</h3>
 
   <p align="center">
-    This is the FINAL PROJECT of DS535 Social Network Analysis
+    FINAL PROJECT of DS535 Social Network Analysis
     <br />
     in Master degree program in Data Science, Srinakarinwirot University 
     <br />
     Semester 2, 2021
     <br />
-    <a href="https://github.com/friendorus/SNA_euroroad/blob/master/EUROROAD_project.cql"><strong>Explore my Neo4j code »</strong></a>
+    <a href="https://github.com/friendorus/SNA_euroroad/blob/6a27f7fa71ec94a157f43533d2b2e4343f6ce354/Cypher/EUROROAD_project.cql"><strong>Explore my Neo4j code »</strong></a>
     <br />
     <br />
   </p>
@@ -48,6 +48,7 @@
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li> -->
     <li><a href="#medium">Medium</a></li>
+    <li><a href="#report">Report</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
@@ -57,7 +58,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-This is the FINAL PROJECT in part of DS535 Social Network Analysis, in Master degree program in Data Science, Srinakarinwirot University, 2nd Semester, 2021. This project is about social analysis of international euro road network dataset focusing on using Neo4j Desktop program with Graph Data Science Library to look for Centrality and Community detection. The language using in Neo4j is Cycher Query Language (CQL).
+This is the final project in part of DS535 Social Network Analysis, in Master degree program in Data Science, Srinakarinwirot University, 2nd Semester, 2021. This project is about social analysis of international euro road network dataset focusing on using Neo4j Desktop program with Graph Data Science Library to look for Centrality and Community detection. The language using in Neo4j is Cycher Query Language (CQL).
 
 
 
@@ -68,11 +69,13 @@ This is the FINAL PROJECT in part of DS535 Social Network Analysis, in Master de
 
 ### Prerequisites
 
-At the begining, you should download data set at [my github](https://github.com/friendorus/SNA_euroroad) which consists of 2 csv files those are [/Data/nodes.csv](https://github.com/friendorus/SNA_euroroad/blob/f1baca4a5ade8be92f953ddd9ace954339957c44/Data/nodes.csv) and [/Data/edges.csv](https://github.com/friendorus/SNA_euroroad/blob/f1baca4a5ade8be92f953ddd9ace954339957c44/Data/edges.csv)
+At the begining, you should download data set at [my github](https://github.com/friendorus/SNA_euroroad) which consists of 2 csv files those are [nodes.csv](https://github.com/friendorus/SNA_euroroad/blob/f1baca4a5ade8be92f953ddd9ace954339957c44/Data/nodes.csv) and [edges.csv](https://github.com/friendorus/SNA_euroroad/blob/f1baca4a5ade8be92f953ddd9ace954339957c44/Data/edges.csv)
 
 ### Installation
 
-Neo4j Desktop can download [here](https://neo4j.com/download/)
+1. Neo4j Desktop can download [here](https://neo4j.com/download/)
+1. After Loading csv. files and create your project and database in Neo4j, you need to copy these files to import folder. You can find the import folder by hovering over the three dots to the right started DBMS and selecting __Open folder__, and then __Import__
+1. After add csv. file to import folder, you should install plugin for using algotirth. Plugins that you should install are __APOC__ and __Graph Data Science Library__
 
 
 
@@ -81,9 +84,12 @@ Neo4j Desktop can download [here](https://neo4j.com/download/)
 
 I wrote how to import csv file to Neo4j, Neo4j code and all of result in [My Medium.](https://peachapong-poolpol.medium.com/social-network-analysis-of-international-e-road-network-fcf685d3e2dd)
 
-You can also see the code and result of my project from the [Powepoint Files](https://github.com/friendorus/SNA_euroroad/blob/f1baca4a5ade8be92f953ddd9ace954339957c44/Result%20of%20SNA%20of%20Euroroad%20Using%20Neo4j.pptx)
+You can also see the code and result of my project from the [Powepoint Files](https://github.com/friendorus/SNA_euroroad/blob/6a27f7fa71ec94a157f43533d2b2e4343f6ce354/docs/Result%20of%20SNA%20of%20Euroroad%20Using%20Neo4j.pptx)
 
 
+<!-- REPORT -->
+## Report
+I wrote the article report in Thai. You can find it [here](https://github.com/friendorus/SNA_euroroad/blob/6a27f7fa71ec94a157f43533d2b2e4343f6ce354/docs/Report%20of%20SNA%20of%20International%20Euroroad%20network.pdf)
 
 <!-- CONTACT -->
 ## Contact
